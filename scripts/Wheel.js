@@ -1,27 +1,26 @@
-import { getMetals, setMetal } from "./database.js"
+import { getWheels, setWheel } from "./database.js"
 
-const metals = getMetals()
+const wheels = getWheels()
 
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.name === "metal") {
-            setMetal(parseInt(event.target.value))
+        if (event.target.name === "wheel") {
+            setWheel(parseInt(event.target.value))
           }
     }    
 )
 
-export const Metals = () => {
+export const WheelStyle = () => {
     let html = "<ul>"
-
-    const listMetal = metals.map((metal) => {
+Wheels = wheels.map((wheel) => {
         return  `<li>
-            <input type="radio" name="metal" value="${metal.id}" /> ${metal.metal}
+            <input type="radio" name="wheel" value="${wheel.id}" /> ${metal.style}
         </li>`
     })
 
 
-    html += listMetal.join("")
+    html += listWheel.join("")
 
     html += "</ul>"
     return html
