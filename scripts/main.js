@@ -1,9 +1,9 @@
-import { KneelDiamonds } from "./KneelDiamonds.js"
+import { CarsRUs } from "./CarsRUS.js"
 
 const mainContainer = document.querySelector("#container")
 
 const renderAllHTML = () => {
-    mainContainer.innerHTML = KneelDiamonds()
+    mainContainer.innerHTML = CarsRUs()
 }
 
 renderAllHTML()

@@ -1,27 +1,27 @@
-import { getSizes, setSize } from "./database.js"
+import { getPaintColors, setPaintColor } from "./database.js"
 
-const sizes = getSizes()
+const paintColors = getPaintColors()
 
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.name === "size") {
-            setSize(parseInt(event.target.value))
+        if (event.target.name === "paintColor") {
+            setPaintColor(parseInt(event.target.value))
          }
     }
 )
 
-export const DiamondSizes = () => {
+export const CarPaintColor = () => {
     let html = "<ul>"
 
     // Use .map() for converting objects to <li> elements
-    const listSize = sizes.map((size) => {
+    const listColor = paintColors.map((paintColor) => {
         return `<li>
-            <input type="radio" name="size" value="${size.id}" /> ${size.carets}
+            <input type="radio" name="paintColor" value="${paintColor.id}" /> ${paintColor.color}
         </li>`
     })
 
-    html += listSize.join("")
+    html += listColor.join("")
     html += "</ul>"
 
     return html

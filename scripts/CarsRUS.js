@@ -1,8 +1,9 @@
 
-import { DiamondSizes } from "./DiamondSizes.js"
-import { JewelryStyles } from "./JewelryStyles.js"
+import { CarPaintColor } from "./PaintColors.js"
+import { TechnologyPackage } from "./Tech.js"
 import { Orders } from "./Orders.js"
-import { Metals } from "./Metals.js"
+import { InteriorStyles } from "./Interior.js"
+import { WheelStyle } from "./Wheel.js"
 import { addCustomOrder } from "./database.js"
 
 document.addEventListener(
@@ -13,22 +14,26 @@ document.addEventListener(
         }
     })
 
-export const KneelDiamonds = () => {
+export const CarsRUs = () => {
     return `
-        <h1>Kneel Diamonds</h1>
+        <h1>Cars 'R' Us</h1>
 
         <article class="choices">
-            <section class="choices__metals options">
-                <h2>Metals</h2>
-                ${Metals()}
+            <section class="choices__paintColors options">
+                <h2>Paint Colors</h2>
+                ${CarPaintColor()}
             </section>
-            <section class="choices__sizes options">
-                <h2>Sizes</h2>
-                ${DiamondSizes()}
+            <section class="choices__technologies options">
+                <h2>Technologies</h2>
+                ${TechnologyPackage()}
             </section>
-            <section class="choices__styles options">
-                <h2>Styles</h2>
-                ${JewelryStyles()}
+            <section class="choices__interior options">
+                <h2>Interiors</h2>
+                ${InteriorStyles()}
+            </section>
+            <section class="choices__wheels options">
+                <h2>Wheels</h2>
+                ${WheelStyle()}
             </section>
         </article>
 

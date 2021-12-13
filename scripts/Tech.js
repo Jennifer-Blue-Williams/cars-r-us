@@ -1,27 +1,26 @@
-import { getMetals, setMetal } from "./database.js"
+import { getTechnologies, setTechnology } from "./database.js"
 
-const metals = getMetals()
+const technologies = getTechnologies()
 
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.name === "metal") {
-            setMetal(parseInt(event.target.value))
+        if (event.target.name === "technology") {
+            setTechnology(parseInt(event.target.value))
           }
     }    
 )
 
-export const Metals = () => {
+export const TechnologyPackage = () => {
     let html = "<ul>"
 
-    const listMetal = metals.map((metal) => {
+    const listTech = technologies.map((technology) => {
         return  `<li>
-            <input type="radio" name="metal" value="${metal.id}" /> ${metal.metal}
+            <input type="radio" name="technology" value="${technology.id}" /> ${technology.package}
         </li>`
     })
 
-
-    html += listMetal.join("")
+listTech.join("")
 
     html += "</ul>"
     return html

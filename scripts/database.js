@@ -6,31 +6,38 @@
 
 */
 const database = {
-    styles: [
-        { id: 1, style: "Classic", price: 500 },
-        { id: 2, style: "Modern", price: 710 },
-        { id: 3, style: "Vintage", price: 965 }
+    paintColors: [
+        { id: 1, color: "Silver", price: 300 },
+        { id: 2, color: "Midnight Blue", price: 500 },
+        { id: 3, color: "Firebrick Red", price: 600 }
+        { id: 4, color: "Spring Green", price: 700 }
     ],
-    sizes: [
-        { id: 1, carets: 0.5, price: 405 },
-        { id: 2, carets: 0.75, price: 782 },
-        { id: 3, carets: 1, price: 1470 },
-        { id: 4, carets: 1.5, price: 1997 },
-        { id: 5, carets: 2, price: 3638 }
+    interiors: [
+        { id: 1, type: "Beige Fabric", price: 200 },
+        { id: 2, type: "Charcoal Fabric", price: 400 },
+        { id: 3, type: "White Leather", price: 700 },
+        { id: 4, type: "Black Leather", price: 850 }
+      
     ],
-    metals: [
-        { id: 1, metal: "Sterling Silver", price: 12.42 },
-        { id: 2, metal: "14K Gold", price: 736.4 },
-        { id: 3, metal: "24K Gold", price: 1258.9 },
-        { id: 4, metal: "Platinum", price: 795.45 },
-        { id: 5, metal: "Palladium", price: 1241.0 }
+    wheels: [
+        { id: 1, style: "Radial", price: 100.29 },
+        { id: 2, style: "Radial Black", price: 350.20 },
+        { id: 3, style: "Spoke Silver", price: 420.95 },
+        { id: 4, style: "Spoke Black", price: 500.13 }
+    ],
+    technologies: [
+        { id: 1, package: "Basic", price: 100.29 },
+        { id: 2, package: "Navigation", price: 560.49 },
+        { id: 3, package: "Visibility", price: 728.42 },
+        { id: 4, package: "Ultra", price: 1200.00 }
     ],
     customOrders: [
         {
             id: 1,
-            metalId: 3,
-            sizeId: 2,
-            styleId: 3,
+            wheelId: 3,
+            paintColorId: 2,
+            interiorId: 3,
+            technologyId: 4,
             timestamp: 1614659931693
         }
         
@@ -39,14 +46,17 @@ const database = {
     orderBuilder: {},
 }
 
-export const getStyles = () => {
-    return database.styles.map(style => ({...style}))
+export const getPaintColors = () => {
+    return database.paintColors.map(paintcolor => ({...paintcolor}))
 }
-export const getSizes = () => {
-    return database.sizes.map(size => ({...size}))
+export const getWheels = () => {
+    return database.wheels.map(wheel => ({...wheel}))
 }
-export const getMetals = () => {
-    return database.metals.map(metal => ({...metal}))
+export const getTechnologies = () => {
+    return database.technology.map(technology => ({...technology}))
+}
+export const getInteriors = () => {
+    return database.interiors.map(interior => ({...interior}))
 }
 export const getOrders = () => {
     return database.customOrders.map(customOrder => ({...customOrder}))
@@ -54,16 +64,19 @@ export const getOrders = () => {
 
 
 
-export const setMetal = (id) => {
-    database.orderBuilder.metalId = id
+export const setWheel = (id) => {
+    database.orderBuilder.wheelId = id
 }
 
-export const setSize = (id) => {
-    database.orderBuilder.sizeId = id
+export const setPaintColor = (id) => {
+    database.orderBuilder.paintColorId = id
 }
 
-export const setStyle = (id) => {
-    database.orderBuilder.styleId = id
+export const setTechnology = (id) => {
+    database.orderBuilder.technologyId = id
+}
+export const setInterior = (id) => {
+    database.orderBuilder.interiorId = id
 }
 
 

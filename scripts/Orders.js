@@ -1,17 +1,19 @@
-import { getOrders, getMetals, getSizes, getStyles } from "./database.js"
+import { getOrders, getWheels, getInteriors, getTechnologies, getPaintColors } from "./database.js"
 
 const orders = getOrders()
-const metals = getMetals()
-const styles = getStyles()
-const sizes = getSizes()
+const wheels = getWheels()
+const interiors = getInteriors()
+const paintColors = getPaintColors()
+const technologies = getTechnologies()
 
 
 const buildOrderListItem = (order) => { 
-    const foundMetal = metals.find((metal) => metal.id === order.metalId);
-    const foundStyle = styles.find((style) => style.id === order.styleId);
-    const foundSize = sizes.find((size) => size.id === order.sizeId);
+    const foundWheel = wheels.find((wheel) => wheel.id === order.wheelId);
+    const foundPaintColor = paintColors.find((paintColor) => paintColor.id === order.paintColorId);
+    const foundInterior = interiors.find((interior) => interior.id === order.interiorId);
+    const foundTechnology = technologies.find((technology) => technology.id === order.technologyId);
 
-const totalCost = foundMetal.price + foundStyle.price + foundSize.price;
+const totalCost = foundWheel.price + foundPaintColor.price + foundInterior.price + foundTechnology;
 
 const costString = totalCost.toLocaleString("en-US", {
     style: "currency",

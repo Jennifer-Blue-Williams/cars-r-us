@@ -1,29 +1,29 @@
-import { getStyles, setStyle } from "./database.js"
+import { getInteriors, setInterior } from "./database.js"
 
-const styles = getStyles()
+const interiors = getInteriors()
 
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.name === "style") {
-            setStyle(parseInt(event.target.value))
+        if (event.target.name === "interior") {
+            setInterior(parseInt(event.target.value))
          }
     }    
 )
 
-export const JewelryStyles = () => {
+export const InteriorStyles = () => {
     let html = "<ul>"
 
     // Use .map() for converting objects to <li> elements
-    const listStyle = styles.map((style) => {
+    const listInterior = interiors.map((interior) => {
         return  `<li>
-            <input type="radio" name="style" value="${style.id}" /> ${style.style}
+            <input type="radio" name="interior" value="${interior.id}" /> ${interior.type}
         </li>`
     })
 
 
     // Join all of the strings in the array into a single string
-    html += listStyle.join("")
+    html += listInterior.join("")
 
     html += "</ul>"
     return html
