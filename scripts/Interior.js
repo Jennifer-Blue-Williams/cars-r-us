@@ -16,8 +16,14 @@ export const InteriorStyles = () => {
 
     // Use .map() for converting objects to <li> elements
     const listInterior = interiors.map((interior) => {
-        return  `<li>
-            <input type="radio" name="interior" value="${interior.id}" /> ${interior.type}
+        return `<li>
+        <select id="resource">
+        <option value="0">Select Interior...</option>
+        <option value="1">Beige Fabric</option>
+        <option value="2">Charcoal Fabric</option>
+        <option value="1">White Leather</option>
+        <option value="1">Black Leather/option>
+    </select>
         </li>`
     })
 

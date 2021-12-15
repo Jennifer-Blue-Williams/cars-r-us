@@ -9,7 +9,7 @@ const database = {
     paintColors: [
         { id: 1, color: "Silver", price: 300 },
         { id: 2, color: "Midnight Blue", price: 500 },
-        { id: 3, color: "Firebrick Red", price: 600 }
+        { id: 3, color: "Firebrick Red", price: 600 },
         { id: 4, color: "Spring Green", price: 700 }
     ],
     interiors: [
@@ -53,7 +53,7 @@ export const getWheels = () => {
     return database.wheels.map(wheel => ({...wheel}))
 }
 export const getTechnologies = () => {
-    return database.technology.map(technology => ({...technology}))
+    return database.technologies.map(technology => ({...technology}))
 }
 export const getInteriors = () => {
     return database.interiors.map(interior => ({...interior}))

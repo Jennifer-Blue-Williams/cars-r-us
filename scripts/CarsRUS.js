@@ -6,13 +6,23 @@ import { InteriorStyles } from "./Interior.js"
 import { WheelStyle } from "./Wheel.js"
 import { addCustomOrder } from "./database.js"
 
+// document.addEventListener(
+//     "click",
+//     (event) => {
+//         if (event.target.id === "orderButton") {
+//             addCustomOrder()
+//         }
+//     })
 document.addEventListener(
-    "click",
-    (event) => {
-        if (event.target.id === "orderButton") {
+    "change",
+    (changeEvent) => {
+        if (changeEvent.target.id === "orderButton") {
             addCustomOrder()
+            const chosenOption = changeEvent.target.value
+            console.log(chosenOption)  // "1" or "2"
         }
-    })
+    }
+)
 
 export const CarsRUs = () => {
     return `
@@ -24,7 +34,7 @@ export const CarsRUs = () => {
                 ${CarPaintColor()}
             </section>
             <section class="choices__technologies options">
-                <h2>Technologies</h2>
+                <h2>Tech Package</h2>
                 ${TechnologyPackage()}
             </section>
             <section class="choices__interior options">
@@ -38,11 +48,11 @@ export const CarsRUs = () => {
         </article>
 
         <article>
-            <button id="orderButton">Create Custom Order</button>
+            <button id="orderButton">Place Car Order</button>
         </article>
 
         <article class="customOrders">
-            <h2>Custom Jewelry Orders</h2>
+            <h2>Custom Car Orders</h2>
             ${Orders()}
         </article>
     `

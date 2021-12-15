@@ -17,7 +17,13 @@ export const CarPaintColor = () => {
     // Use .map() for converting objects to <li> elements
     const listColor = paintColors.map((paintColor) => {
         return `<li>
-            <input type="radio" name="paintColor" value="${paintColor.id}" /> ${paintColor.color}
+        <select id="resource">
+        <option value="0">Select Paint Color...</option>
+        <option value="1">Silver</option>
+        <option value="2">Midnight Blue</option>
+        <option value="1">Firebrick Red</option>
+        <option value="1">Spring Green</option>
+    </select>
         </li>`
     })
 

@@ -9,8 +9,11 @@ const technologies = getTechnologies()
 
 const buildOrderListItem = (order) => { 
     const foundWheel = wheels.find((wheel) => wheel.id === order.wheelId);
+    
     const foundPaintColor = paintColors.find((paintColor) => paintColor.id === order.paintColorId);
+    
     const foundInterior = interiors.find((interior) => interior.id === order.interiorId);
+    
     const foundTechnology = technologies.find((technology) => technology.id === order.technologyId);
 
 const totalCost = foundWheel.price + foundPaintColor.price + foundInterior.price + foundTechnology;
