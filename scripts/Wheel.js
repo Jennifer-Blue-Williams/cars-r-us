@@ -14,15 +14,10 @@ document.addEventListener(
 export const WheelStyle = () => {
     let html = "<ul>"
 const listWheel = wheels.map((wheel) => {
-    return  `<li>
-    <select id="resource">
-    <option value="0">Select Wheels...</option>
-    <option value="1">Radial</option>
-    <option value="2">Black Radial</option>
-    <option value="1">Spoke Silver</option>
-    <option value="1">Spole Black</option>
-</select>
-    </li>`
+    return  `
+    <option value="${wheel.id}">${wheel.style}</option>
+    
+`
 })
 
     html += listWheel.join("")

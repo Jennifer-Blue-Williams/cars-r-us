@@ -14,16 +14,10 @@ document.addEventListener(
 export const TechnologyPackage = () => {
     let html = "<ul>"
 
-    const listTech = technologies.map(() => {
-        return  `<li>
-        <select id="resource">
-        <option value="0">Select Technoloygy Package...</option>
-        <option value="1">Basic</option>
-        <option value="2">Navigation</option>
-        <option value="1">Visbility</option>
-        <option value="1">Ultra/option>
-    </select>
-        </li>`
+    const listTech = technologies.map((technology) => {
+        return  `
+        <option value="${technology.id}">${technology.package}</option>
+ `
     })
     
 html += listTech.join("")
