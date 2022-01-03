@@ -14,17 +14,10 @@ document.addEventListener(
 export const CarPaintColor = () => {
     let html = "<ul>"
 
-    // Use .map() for converting objects to <li> elements
     const listColor = paintColors.map((paintColor) => {
-        return `<li>
-        <select id="resource">
-        <option value="0">Select Paint Color...</option>
-        <option value="1">Silver</option>
-        <option value="2">Midnight Blue</option>
-        <option value="1">Firebrick Red</option>
-        <option value="1">Spring Green</option>
-    </select>
-        </li>`
+        return `
+        <option value="${paintColor.id}">${paintColor.color}</option>
+      `
     })
 
     html += listColor.join("")
